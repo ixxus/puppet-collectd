@@ -9,5 +9,7 @@ fixtures:
       ref: '2.1.0'
     epel:
       repo: 'https://github.com/stahnma/puppet-module-epel'
+    archive:
+      repo: 'https://github.com/voxpupuli/puppet-archive'
   symlinks:
     'collectd': "#{source_dir}"

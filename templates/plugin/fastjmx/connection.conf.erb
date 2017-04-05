@@ -1,0 +1,23 @@
+<Connection>
+  <% if @host -%>
+  Host "<%= @host %>"
+  <% end -%>
+  ServiceURL "<%= @service_url %>"
+  <% Array(@collect).each do |collect| -%>
+  Collect "<%= collect %>"
+  <% end -%>
+  <% if @user -%>
+  User "<%= @user %>"
+  <% end -%>
+  <% if @password -%>
+  Password "<%= @password %>"
+  <% end -%>
+  <% if @instance_prefix -%>
+  InstancePrefix "<%= @instance_prefix %>"
+  <% end -%>
+  IncludePortInHostname <%= @include_port_in_hostname %>
+  Synchronous <%= @synchronous %>
+  <% if @ttl -%>
+  TTL <%= @ttl %>
+  <% end -%>
+</Connection>

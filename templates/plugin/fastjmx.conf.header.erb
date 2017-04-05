@@ -1,0 +1,10 @@
+<Plugin "java">
+  JVMArg "-Djava.class.path=<%= @class_path %>"
+<% Array(@jvmarg).each do |jvmarg| -%>
+  JVMArg "<%= jvmarg %>"
+<% end -%>
+
+  LoadPlugin "com.e_gineering.collectd.FastJMX"
+  <Plugin "FastJMX">
+    MaxThreads 256
+    CollectInternal true
