@@ -1,8 +1,8 @@
 <Plugin "java">
   JVMArg "-Djava.class.path=<%= @class_path %>"
-<% Array(@jvmarg).each do |jvmarg| -%>
+  <%- Array(@jvmarg).each do |jvmarg| -%>
   JVMArg "<%= jvmarg %>"
-<% end -%>
+  <%- end -%>
 
   LoadPlugin "com.e_gineering.collectd.FastJMX"
   <Plugin "FastJMX">

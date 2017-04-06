@@ -55,7 +55,7 @@ describe 'collectd::plugin::fastjmx::connection', type: :define do
                                                                          order: '20')
     end
 
-    it { is_expected.to contain_concat__fragment(concat_fragment_name).with_content(%r{Host "bar\.example\.com"}) }
+    it { is_expected.to contain_concat__fragment(concat_fragment_name).with_content(%r{<Connection "bar\.example\.com">}) }
   end
 
   context 'collect array' do
