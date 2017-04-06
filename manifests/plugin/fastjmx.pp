@@ -1,9 +1,11 @@
 # https://github.com/egineering-llc/collectd-fast-jmx
 class collectd::plugin::fastjmx (
-  $ensure         = 'present',
-  $jvmarg         = [],
-  $manage_package = undef,
-  $version        = '1.0.0',
+  $ensure           = 'present',
+  $jvmarg           = [],
+  $manage_package   = undef,
+  $version          = '1.0.0',
+  $max_threads      = 256,
+  $collect_internal = true,
 ) {
 
   include ::collectd

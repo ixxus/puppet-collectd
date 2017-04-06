@@ -6,5 +6,5 @@
 
   LoadPlugin "com.e_gineering.collectd.FastJMX"
   <Plugin "FastJMX">
-    MaxThreads 256
-    CollectInternal true
+    MaxThreads <%= @max_threads %>
+    CollectInternal <%= @collect_internal %>

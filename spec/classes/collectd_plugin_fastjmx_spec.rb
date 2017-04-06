@@ -97,4 +97,32 @@ describe 'collectd::plugin::fastjmx', type: :class do
         })
     end
   end
+
+  context 'with default maxthreads' do
+    let(:params) { { } }
+    it 'has a default value for MaxThreads' do
+      is_expected.to contain_concat__fragment('collectd_plugin_fastjmx_conf_header').with_content(%r{MaxThreads 256}m)
+    end
+  end
+
+  context 'with custom maxthreads' do
+    let(:params) { { max_threads: 512 } }
+    it 'has a custom value for MaxThreads' do
+      is_expected.to contain_concat__fragment('collectd_plugin_fastjmx_conf_header').with_content(%r{MaxThreads 512}m)
+    end
+  end
+
+  context 'with default collect_internal' do
+    let(:params) { { } }
+    it 'has a default value for CollectInternal' do
+      is_expected.to contain_concat__fragment('collectd_plugin_fastjmx_conf_header').with_content(%r{CollectInternal true}m)
+    end
+  end
+
+  context 'with custom collect_internal' do
+    let(:params) { { collect_internal: false } }
+    it 'has a custom value for CollectInternal' do
+      is_expected.to contain_concat__fragment('collectd_plugin_fastjmx_conf_header').with_content(%r{CollectInternal false}m)
+    end
+  end
 end
